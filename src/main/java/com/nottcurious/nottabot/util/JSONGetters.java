@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class SecretsGetters {
+public class JSONGetters {
     private static final Logger log = LogManager.getLogger();
 
     /**
@@ -32,7 +32,7 @@ public class SecretsGetters {
     /**
      * Returns the Hypixel API Key Stored
      *
-     * @return token Hypixel API Key
+     * @return String Hypixel API Key
      * @throws IOException In case file does not exist
      */
     public static String getAPIKey() throws IOException {
@@ -44,5 +44,22 @@ public class SecretsGetters {
 
         log.info("Returning APIKey");
         return jsonObject.get("hypixel_api_key").toString();
+    }
+
+    /**
+     * Returns Bot Version
+     *
+     * @return String Bot Version
+     * @throws IOException In case file does not exist
+     */
+    public static String getBotVersion() throws IOException {
+        log.debug("Getting JSON Data");
+        String data = new String(Files.readAllBytes(Paths.get("./src/main/resources/config.json")));
+
+        log.debug("Created JSON Object for Config");
+        JSONObject jsonObject = new JSONArray(data).getJSONObject(0);
+
+        log.info("Returning Bot Version");
+        return jsonObject.get("bot_version").toString();
     }
 }

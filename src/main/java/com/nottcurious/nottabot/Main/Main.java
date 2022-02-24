@@ -2,8 +2,9 @@ package com.nottcurious.nottabot.main;
 
 //import com.nottcurious.nottabot.logging.Logger;
 
+import com.nottcurious.nottabot.commands.util.BotVersionCommand;
 import com.nottcurious.nottabot.commands.util.PingCommand;
-import com.nottcurious.nottabot.util.SecretsGetters;
+import com.nottcurious.nottabot.util.JSONGetters;
 import de.btobastian.sdcf4j.CommandHandler;
 import de.btobastian.sdcf4j.handler.JavacordHandler;
 import org.apache.logging.log4j.LogManager;
@@ -25,7 +26,7 @@ public class Main {
         setupLogging();
 
         log.info("Getting Secrets");
-        String token = SecretsGetters.getBotToken();
+        String token = JSONGetters.getBotToken();
 
         log.info("Creating DiscordAPI Object");
         DiscordApi api = new DiscordApiBuilder().setToken(token).login().join();
@@ -35,10 +36,13 @@ public class Main {
         CommandHandler handler = new JavacordHandler(api);
 
         log.info("Adding Commands");
+
+        log.debug("Adding Util Commands");
         handler.registerCommand(new PingCommand());
+        handler.registerCommand(new BotVersionCommand());
+        log.debug("Finished Adding Util Commands");
+
         log.info("Finished Adding Commands");
-
-
     }
 
     private static void setupLogging() throws IOException {
