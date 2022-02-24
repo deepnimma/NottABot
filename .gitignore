@@ -27,3 +27,6 @@ replay_pid*
 .idea
 
 src/main/resources/token.json
+/build/resources/main/token.json
+
+/build
