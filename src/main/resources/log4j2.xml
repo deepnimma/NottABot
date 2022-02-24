@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration name="Javacord Bot" status="INFO" monitorInterval="5" strict="true">
+<Configuration name="NottABot" status="INFO" monitorInterval="5" strict="true">
     <Appenders>
         <Console name="Console Appender">
             <PatternLayout disableAnsi="false">
                 <Pattern><![CDATA[%highlight{%d <%-5p> <%-35.35t> <%x> <%X> <%50.50c> %m}%n]]></Pattern>
             </PatternLayout>
         </Console>
-        <File name="File Appender" fileName="log/javacord-bot.log" createOnDemand="true">
+        <File name="File Appender" fileName="log/nottabot.log" createOnDemand="true">
             <PatternLayout>
                 <Pattern><![CDATA[%d <%-5p> <%-35.35t> <%x> <%X> <%50.50c> %m%n]]></Pattern>
             </PatternLayout>
@@ -21,8 +21,9 @@
     </Appenders>
     <Loggers>
         <Root level="ALL">
-            <AppenderRef ref="Console Appender" level="DEBUG"/>
-            <!--<AppenderRef ref="File Appender" level="DEBUG"/>-->
+            <!--            Change Log Level Here-->
+            <AppenderRef ref="Console Appender" level="INFO"/>
+            <AppenderRef ref="File Appender" level="DEBUG"/>
             <!--<AppenderRef ref="ALL File Appender"/>-->
         </Root>
     </Loggers>

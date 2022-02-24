@@ -1,6 +1,15 @@
 package com.nottcurious.nottabot.main;
 
+//import com.nottcurious.nottabot.logging.Logger;
+
+import com.nottcurious.nottabot.commands.util.PingCommand;
 import com.nottcurious.nottabot.util.SecretsGetters;
+import de.btobastian.sdcf4j.CommandHandler;
+import de.btobastian.sdcf4j.handler.JavacordHandler;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.javacord.api.DiscordApi;
+import org.javacord.api.DiscordApiBuilder;
 import org.javacord.api.util.logging.ExceptionLogger;
 
 import java.io.IOException;
@@ -10,12 +19,26 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Main {
+    private static final Logger log = LogManager.getLogger();
+
     public static void main(String[] args) throws IOException {
         setupLogging();
 
+        log.info("Getting Secrets");
         String token = SecretsGetters.getBotToken();
-        String api_key = SecretsGetters.getAPIKey();
-        System.out.println(token + api_key);
+
+        log.info("Creating DiscordAPI Object");
+        DiscordApi api = new DiscordApiBuilder().setToken(token).login().join();
+        log.info("Bot Online and Logged In");
+
+        log.info("Creating CommandHandler");
+        CommandHandler handler = new JavacordHandler(api);
+
+        log.info("Adding Commands");
+        handler.registerCommand(new PingCommand());
+        log.info("Finished Adding Commands");
+
+
     }
 
     private static void setupLogging() throws IOException {
