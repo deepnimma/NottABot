@@ -19,7 +19,7 @@ public class PingCommand implements CommandExecutor {
      * @param message The message the command was issued in.
      */
     @Command(aliases = "..ping", async = true, description = "Pong!")
-    public void handleCommand(Server server, TextChannel channel, Message message) {
+    public void onCommand(Server server, TextChannel channel, Message message) {
         final DiscordApi api = channel.getApi();
 
         EmbedBuilder embed = new EmbedBuilder()
