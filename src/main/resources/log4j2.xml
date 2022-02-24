@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration name="Javacord Bot" status="INFO" monitorInterval="5" strict="true">
+    <Appenders>
+        <Console name="Console Appender">
+            <PatternLayout disableAnsi="false">
+                <Pattern><![CDATA[%highlight{%d <%-5p> <%-35.35t> <%x> <%X> <%50.50c> %m}%n]]></Pattern>
+            </PatternLayout>
+        </Console>
+        <File name="File Appender" fileName="log/javacord-bot.log" createOnDemand="true">
+            <PatternLayout>
+                <Pattern><![CDATA[%d <%-5p> <%-35.35t> <%x> <%X> <%50.50c> %m%n]]></Pattern>
+            </PatternLayout>
+        </File>
+        <!--<RollingRandomAccessFile name="ALL File Appender" fileName="log/javacord-bot-ALL.log" filePattern="log/javacord-bot-ALL-%i.log.gz">
+            <PatternLayout>
+                <Pattern><![CDATA[%d <%-5p> <%-35.35t> <%x> <%X> <%50.50c> %m%n]]></Pattern>
+            </PatternLayout>
+            <SizeBasedTriggeringPolicy size="1 GB"/>
+            <DefaultRolloverStrategy fileIndex="min" max="9"/>
+        </RollingRandomAccessFile>-->
+    </Appenders>
+    <Loggers>
+        <Root level="ALL">
+            <AppenderRef ref="Console Appender" level="DEBUG"/>
+            <!--<AppenderRef ref="File Appender" level="DEBUG"/>-->
+            <!--<AppenderRef ref="ALL File Appender"/>-->
+        </Root>
+    </Loggers>
+</Configuration>

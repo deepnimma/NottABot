@@ -13,7 +13,8 @@ ext {
     versions = [
             javacord  : '3.4.0',
             sdcf4j    : 'v1.0.10',
-            log4j     : '2.17.1'
+            log4j     : '2.17.1',
+            json      : '20211205'
     ]
 }
 
@@ -21,6 +22,7 @@ dependencies {
     implementation "org.javacord:javacord:${versions.javacord}"
     implementation "org.apache.logging.log4j:log4j-api:${versions.log4j}"
     implementation "org.apache.logging.log4j:log4j-jul:${versions.log4j}"
+    implementation "org.json:json:${versions.json}"
 
     runtimeOnly "org.apache.logging.log4j:log4j-core:${versions.log4j}"
     runtimeOnly "org.apache.logging.log4j:log4j-slf4j-impl:${versions.log4j}"

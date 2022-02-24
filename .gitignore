@@ -26,4 +26,4 @@ replay_pid*
 .gradle
 .idea
 
-token.json
+src/main/resources/token.json
