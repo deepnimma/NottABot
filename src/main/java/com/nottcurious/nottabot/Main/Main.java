@@ -1,8 +1,8 @@
 package com.nottcurious.nottabot.main;
 
-import com.nottcurious.nottabot.commands.util.BotVersionCommand;
-import com.nottcurious.nottabot.commands.util.PingCommand;
-import com.nottcurious.nottabot.slashcommands.util.PingCommandSlash;
+import com.nottcurious.nottabot.commands.normal.util.BotVersionCommand;
+import com.nottcurious.nottabot.commands.normal.util.PingCommand;
+import com.nottcurious.nottabot.commands.slash.util.PingCommandSlash;
 import com.nottcurious.nottabot.util.JSONGetters;
 import de.btobastian.sdcf4j.CommandHandler;
 import de.btobastian.sdcf4j.handler.JavacordHandler;
