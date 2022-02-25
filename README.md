@@ -1,5 +1,5 @@
 # NottABot
-Current Version: v0.0.1
+Current Version: **v0.0.2**
 
 ## NottABot Planned Features
 Striked Through = Implemented
