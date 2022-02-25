@@ -2,6 +2,7 @@ package com.nottcurious.nottabot.main;
 
 import com.nottcurious.nottabot.commands.normal.util.BotVersionCommand;
 import com.nottcurious.nottabot.commands.normal.util.PingCommand;
+import com.nottcurious.nottabot.commands.slash.util.BotVersionSlash;
 import com.nottcurious.nottabot.commands.slash.util.PingCommandSlash;
 import com.nottcurious.nottabot.util.JSONGetters;
 import de.btobastian.sdcf4j.CommandHandler;
@@ -53,6 +54,7 @@ public class Main {
         log.info("Adding Slash Commands");
         log.debug("Adding Util Slash Commands");
         me.s3ns3iw00.jcommands.CommandHandler.registerCommand(new PingCommandSlash(), testingServer);
+        me.s3ns3iw00.jcommands.CommandHandler.registerCommand(new BotVersionSlash(), testingServer);
         log.debug("Finished Adding Util Slash Commands");
         log.info("Finished Adding Slash Commands");
 
