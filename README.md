@@ -1,13 +1,13 @@
 # NottABot
-Current Version: **v0.0.2**
+Current Version: **v0.0.1**
 
 ## NottABot Planned Features
 Striked Through = Implemented
 
 
 **Generic Functions**
-1. ~~Ping~~
-2. ~~Bot Version~~
+1. Ping
+2. Bot Version
 
 **Moderation Related**
 1. Kick Player
