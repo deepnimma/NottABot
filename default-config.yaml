@@ -4,7 +4,7 @@ file_logs: !ENV [ "FILE_LOGS", "false" ]
 
 bot:
 	prefix: ".."
-	token: "Nzg0OTYyNzk0OTYwNTg0NzU1.X8w7kg.OSjea-2MgFlAt6UGWmv2NuqgIxM"
+	token: "TOKEN"
 	default_guilds: [ 784965489687658526 ]
 	debug_guild: 784965489687658526
 	version: "v0.0.3"
